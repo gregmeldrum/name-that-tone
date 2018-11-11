@@ -10,6 +10,8 @@ var currentTriad;
 var currentTonic;
 
 var loading = true;
+var attempts = 0;
+var correctAnswers = 0;
 
 window.onload = function () {
     MIDI.loadPlugin({
@@ -80,13 +82,17 @@ function checkAnswer(guess) {
     hideElement("guess");
     showElement("answer");
 
+    attempts += 1;
+
     if (guess === currentTriad) {
         document.getElementById("answer").innerHTML = "<p>Correct! " + triadNames[currentTriad] + "</p>";
+        correctAnswers += 1;
     } else {
         document.getElementById("answer").innerHTML = "<p>Incorrect :(<br>Actual Triad: " + triadNames[currentTriad] + "</p>";
     }
 
     showElement("playTriadButton");
+    updateScore();
 }
 
 function showElement(elementId) {
@@ -99,4 +105,8 @@ function hideElement(elementId) {
 
 function updateDisplayCssForElement(elementId, displayStyle) {
    document.getElementById(elementId).style.display = displayStyle;
+}
+
+function updateScore(){
+    document.getElementById("score").innerHTML = "<p>" + correctAnswers + " / " + attempts + "</p>";
 }
