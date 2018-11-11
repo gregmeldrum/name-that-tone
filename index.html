@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+
+	<!-- polyfill -->
+	<script src="inc/shim/Base64.js" type="text/javascript"></script>
+	<script src="inc/shim/Base64binary.js" type="text/javascript"></script>
+	<script src="inc/shim/WebAudioAPI.js" type="text/javascript"></script>
+
+	<!-- midi.js package -->
+	<script src="build/MIDI.min.js" type="text/javascript"></script>
+
+	<!-- utils -->
+	<script src="js/util/dom_request_xhr.js" type="text/javascript"></script>
+	<script src="js/util/dom_request_script.js" type="text/javascript"></script>
+
+	<!-- app -->
+	<script src="js/app/app.js" type="text/javascript"></script>
+
+</head>
+<body>
+	<center>
+		<!-- Loading page -->
+		<div id=loading>
+			<img src="images/loading.gif"/>
+			<p>Loading instrument</p>
+		</div>
+
+		<!-- Play Triad Button -->
+		<button id="playTriadButton" onclick="playTriad()" style="display: none; margin-top: 30px;">Play Triad</button>
+
+		<!-- Button for guessing -->
+		<div id="guess" style="display: none;">
+			<div style="margin-top: 30px;">
+				<button id="replay" onclick="replay()">re-play</button>
+			</div>
+			<br>
+			<div style="margin-top: 30px;">
+				<button id="major" onclick="guessMajor()">Major</button>
+				<button id="minor" onclick="guessMinor()">Minor</button>
+				<button id="augmented" onclick="guessAugmented()">Augmented</button>
+				<button id="diminished" onclick="guessDiminished()">Diminshed</button>
+			</div>
+		</div>
+
+		<!-- Area for putting answer -->
+		<div id="answer" style="display: none;">
+		</div>
+	</center>
+</body>
+</html>
