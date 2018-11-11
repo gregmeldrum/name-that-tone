@@ -1,0 +1,24 @@
+{
+  "name": "name-that-tone",
+  "version": "1.0.0",
+  "description": "music ear training app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gregmeldrum/name-that-tone.git"
+  },
+  "keywords": [
+    "ear",
+    "training",
+    "music"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gregmeldrum/name-that-tone/issues"
+  },
+  "homepage": "https://github.com/gregmeldrum/name-that-tone#readme"
+}
